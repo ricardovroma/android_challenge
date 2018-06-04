@@ -42,8 +42,8 @@ public class RepositoryActivity extends BaseActivity implements RepositoryContra
         rvRepository.setLayoutManager(new LinearLayoutManager(this));
         RepositoryAdapter mAdapter = new RepositoryAdapter(null, this, new RepositoryAdapter.Listener() {
             @Override
-            public void onClickListener(RepositoryItemModelRest repositoryItemModelRest) {
-                ScreenManager.gotoRepositoryDetail(RepositoryActivity.this, repositoryItemModelRest);
+            public void onClickListener(RepositoryItemModelRest repositoryItemModelRest, View ivAvatar) {
+                ScreenManager.gotoRepositoryDetail(RepositoryActivity.this, repositoryItemModelRest, ivAvatar);
             }
         });
         rvRepository.setAdapter(mAdapter);

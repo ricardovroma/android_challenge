@@ -68,7 +68,7 @@ class RepositoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final RepositoryItemModelRest item = (RepositoryItemModelRest) items.get(position);
-        ViewHolder holder = (ViewHolder) viewHolder;
+        final ViewHolder holder = (ViewHolder) viewHolder;
 
         Picasso.with(context).load(item.owner.avatarUrl).transform(new CircleTransform()).into(holder.ivRepository);
         holder.ivShare.setColorFilter(ContextCompat.getColor(context, R.color.colorAccent));
@@ -83,7 +83,7 @@ class RepositoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         holder.viewContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onClickListener(item);
+                listener.onClickListener(item, holder.ivRepository);
             }
         });
 
@@ -103,6 +103,6 @@ class RepositoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     interface Listener {
-        void onClickListener(RepositoryItemModelRest repositoryItemModelRest);
+        void onClickListener(RepositoryItemModelRest repositoryItemModelRest, View ivAvatar);
     }
 }

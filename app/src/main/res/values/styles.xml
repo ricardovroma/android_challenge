@@ -19,7 +19,7 @@
     <style name="repositoryLinks">
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>
